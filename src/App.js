@@ -1,9 +1,9 @@
-import "./App.css";
+
 import React from "react";
-import Parent from './Parent'
+import Header from './Header'
 
 function App() {
-  return <Parent />;
+  return <Header />;
 }
 
 export default App;
