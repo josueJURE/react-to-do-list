@@ -12,7 +12,14 @@ function MainContainer() {
     setItems(previous => {
       return [...previous, task]
     })
+  }
 
+  function deleteItem(id) {
+    setItems(previous => {
+      return previous.filter((_, index) => {
+        return id !== index
+      })
+    })
   }
 
 
@@ -25,6 +32,8 @@ function MainContainer() {
      task={item}
      key={index}
      number={index + 1}
+     id={index}
+     onDelete={deleteItem}
 
      />
      
