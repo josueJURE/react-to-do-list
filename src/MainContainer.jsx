@@ -6,10 +6,13 @@ import Tasks from "./Tasks"
 
 function MainContainer() {
 
-  // [tasks, setTaks] = useState([]);
+  const [items, setItems] = useState([]);
 
-  function addNote(note) {
-  console.log(note)
+  function addNote(task) {
+    setItems(previous => {
+      return [...previous, task]
+    })
+
   }
 
 
@@ -17,7 +20,16 @@ function MainContainer() {
   return <div className="mainContainer">
   <Header/>
   <Input onAdd={addNote}/>
-  <Tasks />
+  {items.map((item, index) => {
+    return  <Tasks
+     task={item}
+     key={index}
+     number={index + 1}
+
+     />
+     
+  })}
+ 
 
   </div>;
 }

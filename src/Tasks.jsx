@@ -1,12 +1,12 @@
 import React from "react";
 import "./Tasks.css";
 
-function Tasks() {
+function Tasks(props) {
   return (
     <div className="row">
-      <div>1</div>
+      <div>{props.number}</div>
       <input type="checkbox"></input>
-      <div>Text</div>
+      <div>{props.task}</div>
       <button>delete</button>
     </div>
   );

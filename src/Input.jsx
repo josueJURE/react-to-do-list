@@ -7,7 +7,7 @@ function Input(props) {
     function HandleChange(e) {
         const newInput = e.target.value;
         setInput(newInput)
-   
+
     }
 
     function submitNote() {
@@ -18,9 +18,9 @@ function Input(props) {
 
   return (
     <>
-      <div class="addTakSection">
-        <i class="fa" aria-hidden="true"></i>
-        <i id="add" class="fa-solid fa-plus-circle"></i>
+      <div className="addTakSection">
+        {/* <i className="fa" aria-hidden="true"></i>
+        <i id="add" class="fa-solid fa-plus-circle"></i> */}
         <button onClick={submitNote}>add</button>
         <input onChange={HandleChange} id="userInput" type="text" required="" value={input}></input>
       </div>
