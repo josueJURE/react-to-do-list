@@ -7,6 +7,7 @@ function Tasks() {
       <div>1</div>
       <input type="checkbox"></input>
       <div>Text</div>
+      <button>delete</button>
     </div>
   );
 }
