@@ -3,6 +3,7 @@ import "./MainContainer.css";
 import Header from "./Header";
 import Input from "./Input";
 import Tasks from "./Tasks"
+import ClearButton from "./ClearButton";
 
 function MainContainer() {
 
@@ -22,10 +23,13 @@ function MainContainer() {
     })
   }
 
+  
+
 
 
   return <div className="mainContainer">
   <Header/>
+  <ClearButton/>
   <Input onAdd={addNote}/>
   {items.map((item, index) => {
     return  <Tasks
