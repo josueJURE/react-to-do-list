@@ -12,7 +12,7 @@ function Input(props) {
     if (input !== "") {
       props.onAdd(input);
       setInput("");
-    }
+    } else alert("enter value")
   }
 
   return (
