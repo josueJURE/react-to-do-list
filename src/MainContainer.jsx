@@ -23,13 +23,16 @@ function MainContainer() {
     })
   }
 
-  
+  function deleteEverything() {
+    setItems([])
+  }
+
 
 
 
   return <div className="mainContainer">
   <Header/>
-  <ClearButton/>
+  <ClearButton onDeletingAll={deleteEverything}/>
   <Input onAdd={addNote}/>
   {items.map((item, index) => {
     return  <Tasks

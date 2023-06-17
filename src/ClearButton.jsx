@@ -1,9 +1,12 @@
 import React from "react";
 import "./ClearButton.css";
 
-function ClearButton() {
+function ClearButton(props) {
+
+
+
   return <div className="clear">
-    <button>clear list</button>
+    <button onClick={props.onDeletingAll}>clear list</button>
   </div>;
 }
 
