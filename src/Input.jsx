@@ -9,8 +9,10 @@ function Input(props) {
   }
 
   function submitNote() {
-    props.onAdd(input);
-    setInput("");
+    if (input !== "") {
+      props.onAdd(input);
+      setInput("");
+    }
   }
 
   return (
