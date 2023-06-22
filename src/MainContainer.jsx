@@ -7,6 +7,7 @@ import "./Tasks.css";
 import ClearButton from "./ClearButton";
 import TasksParent from "./TasksParent";
 import "./Tasks.css";
+import NumberOfTask from "./NumberOfTask";
 
 function MainContainer() {
   const [items, setItems] = useState([]);
@@ -33,6 +34,7 @@ function MainContainer() {
   return (
     <div className="mainContainer">
       <Header />
+      <NumberOfTask />
       <ClearButton onDeletingAll={deleteEverything} />
       <TasksParent>
         {items.map((item, index) => {
