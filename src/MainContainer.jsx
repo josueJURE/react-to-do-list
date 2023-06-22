@@ -2,52 +2,55 @@ import React, { useState } from "react";
 import "./MainContainer.css";
 import Header from "./Header";
 import Input from "./Input";
-import Tasks from "./Tasks"
+import Tasks from "./Tasks";
+import "./Tasks.css";
 import ClearButton from "./ClearButton";
+import TasksParent from "./TasksParent";
+import "./Tasks.css";
 
 function MainContainer() {
-
   const [items, setItems] = useState([]);
 
   function addNote(task) {
-    setItems(previous => {
-      return [...previous, task]
-    })
+    setItems((previous) => {
+      return [...previous, task];
+    });
+    console.log(items);
   }
 
   function deleteItem(id) {
-    setItems(previous => {
+    setItems((previous) => {
       return previous.filter((_, index) => {
-        return id !== index
-      })
-    })
+        return id !== index;
+      });
+    });
   }
 
   function deleteEverything() {
-    setItems([])
+    setItems([]);
   }
 
+  return (
+    <div className="mainContainer">
+      <Header />
+      <ClearButton onDeletingAll={deleteEverything} />
+      <TasksParent>
+        {items.map((item, index) => {
+          return (
+            <Tasks
+              task={item}
+              key={index}
+              number={index + 1}
+              id={index}
+              onDelete={deleteItem}
+            />
+          );
+        })}
+      </TasksParent>
 
-
-
-  return <div className="mainContainer">
-  <Header/>
-  <ClearButton onDeletingAll={deleteEverything}/>
-  <Input onAdd={addNote}/>
-  {items.map((item, index) => {
-    return  <Tasks
-     task={item}
-     key={index}
-     number={index + 1}
-     id={index}
-     onDelete={deleteItem}
-
-     />
-     
-  })}
- 
-
-  </div>;
+      <Input onAdd={addNote} />
+    </div>
+  );
 }
 
 export default MainContainer;

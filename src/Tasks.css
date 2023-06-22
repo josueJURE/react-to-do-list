@@ -6,3 +6,13 @@
   letter-spacing: 0.1rem;
   color: white
 }
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 350px;
+  max-height: 350px;
+  overflow: auto;
+  padding-right: 30px;
+}
